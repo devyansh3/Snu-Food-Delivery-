@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snu Food Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/path/to/ideal-image-slider.css">
+    <link rel="stylesheet" href="/path/to/themes/default/default.css">
+</head>
+
+<body>
+    <nav class="container mx-auto flex items-center justify-between py-4">
+        <div class="flex items-center">
+            <a href="/"><img src="/img/SNU-NCR-IMG.jpg" class="logo_img" alt="logo"></a>
+            <p class="ml-4 font-semibold">Snu Food Delivery</p>
+        </div>
+        <div>
+            <ul class="flex items-center">
+                <li class="ml-6"><a href="/">Menu</a></li>
+                <% if(user) { %>
+                <li class="ml-6">
+                    <form id="logout" action="/logout" method="POST">
+                        <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                    </form>
+                </li>
+                <% } else { %>
+                <li class="ml-6"><a href="/register">Register</a></li>
+                <li class="ml-6"><a href="/login">Login</a></li>
+                <% } %>
+                <li class="ml-6"><a href="/cart" class="inline-block px-4 py-2 rounded-full flex items-center">
+                        <span id="cartCounter"
+                            class="text-white font-bold pr-2"><%= session.cart ? session.cart.totalQty : '' %></span>
+                        <img src="/img/cart.png" alt="">
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+    <%- body %>
+    <hr></hr>
+
+    </body>
+    
+
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Food Delivery</a></li>
+                            <li><a href="#">Catering</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Careers</h3>
+                        <ul>
+                            <li><a href="#">Job openings</a></li>
+                            <li><a href="#">Employee success</a></li>
+                            <li><a href="#">Benefits</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <p class="copyright">Snu Food Delivery © 2021</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/path/to/ideal-image-slider.js"></script>
+
+</html>
