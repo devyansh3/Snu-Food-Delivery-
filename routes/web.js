@@ -28,10 +28,11 @@ function initRoutes(app) {
     // Customer routes
     app.post('/orders', auth, orderController().store)
     app.get('/customer/orders', auth, orderController().index)
-    app.get('/customer/orders/:id', auth, orderController().show)
+    app.get('/profile', auth, orderController().getUserProfile)
+    app.get('/customer/orders/:id', auth, orderController().show) //dynamic route for each route that shows its status
 
     // Admin routes
-    app.get('/admin/orders', admin, adminOrderController().index)
+    app.get('/admin/orders', admin, adminOrderController().index) //only admin can access
     app.post('/admin/order/status', admin, statusController().update)
 }
 

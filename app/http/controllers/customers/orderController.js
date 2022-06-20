@@ -1,4 +1,5 @@
 const Order = require('../../../models/order')
+const User = require('../../../models/user')
 const moment = require('moment')
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 function orderController () {
@@ -59,6 +60,10 @@ function orderController () {
                 { sort: { 'createdAt': -1 } } )
             res.header('Cache-Control', 'no-store')
             res.render('customers/orders', { orders: orders, moment: moment })
+        },
+        async getUserProfile(req, res) {
+            const userProfile = await User.find({ name: req.user.name })
+            return res.render('profile', { userProfile: userProfile })// if name in req matches user name in db then profile view for client
         },
         async show(req, res) {
             const order = await Order.findById(req.params.id)

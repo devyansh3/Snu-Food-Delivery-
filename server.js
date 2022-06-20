@@ -58,7 +58,7 @@ app.use(express.json())
 // Global middleware
 app.use((req, res, next) => {
     res.locals.session = req.session
-    res.locals.user = req.user
+    res.locals.user = req.user //user and session models are now available gloablly to all files
     next()
 })
 // set Template engine

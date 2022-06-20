@@ -77,13 +77,33 @@ updateStatus(order);
 
 initStripe()
 
+
+const paymentForm = document.querySelector('#payment-form');
+paymentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let formData = new FormData(paymentForm);
+    let formObject = {};
+    for (let [key , value] of formData.entries()){
+        formObject[key] = value
+    }
+
+    axios.post('/orders',formObject).then((res) => {
+        console.log(res.data);
+    }).catch((err) => {
+        console.log(err)
+    })
+    
+})
+
+
+
 // Socket
 let socket = io()
 
 // Join
 if(order) {
     //for socket.io we will create a provate room for each order_id so that if that order status is updated , only that order is notified rest orders are not disturbed
-    socket.emit('join', `order_${order._id}`) //we are joining the admin dashboard and order status page of user 
+    socket.emit('join', `order_${order._id}`) //we are joining the admin dashboard and order status      age of user 
 }
 let adminAreaPath = window.location.pathname
 if(adminAreaPath.includes('admin')) {

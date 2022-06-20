@@ -1,0 +1,37 @@
+<% if(user) { %>
+<section class="hero py-16">
+    <h2 class="mb-6 text-lg ml-6">Update User Details</h2>
+    <% console.log(userProfile) %>
+    
+   
+   <form>
+
+    <% userProfile.forEach(function(user) { %>
+        <div class="flex flex-direction-column">
+            <div class="flex ml-6 items-center">
+                <h6>Name</h6>
+        <input type="text"placeholder='Name' class="mb-4 text-lg ml-6 px-2 py-2 border-none rounded-full outline-none" value= <%= user.name%>></input>
+        <button  class="add-to-cart ml-4 px-4 mb-1 rounded-full font-light">Update</button>
+            </div>
+
+
+            <div class="flex ml-6 items-center">
+                <h6>Email</h6>
+                <input type="email" class="mb-4 text-lg ml-6 px-2 py-2 border-none rounded-full outline-none" value= <%= user.email%>></input>
+                <button class="add-to-cart ml-4 mb-1 px-4 rounded-full font-light">Update</button>
+            </div>
+    </div>
+
+    
+    
+        <% }) %>
+   </form>
+   
+</section>
+<% } else { %>
+
+    <p> please login to continue</p>
+<%  } %>
+
+
+
