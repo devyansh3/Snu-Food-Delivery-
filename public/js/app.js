@@ -28454,8 +28454,8 @@ function _initStripe() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\HP\Downloads\Snu Food App\realtime-pizza-app-node-express-mongo-development\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\HP\Downloads\Snu Food App\realtime-pizza-app-node-express-mongo-development\resources\scss\app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! C:\Users\HP\Desktop\Snu-Food-Delivery-\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\HP\Desktop\Snu-Food-Delivery-\resources\scss\app.scss */"./resources/scss/app.scss");
 
 
 /***/ })
