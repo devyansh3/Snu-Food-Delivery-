@@ -31,8 +31,9 @@
                         <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
                     </form>
                 </li>
-                <li class="ml-6">
+                <li class="ml-6 flex items-center">
                     <a href="/"><%= "welcome" + " " + (user.name) %></a>
+                    <img class="rounded-full ml-1 h-10 w-10" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" alt="profile pic"/>
                 </li>
                 <% } else { %>
                 <li class="ml-6"><a href="/register">Register</a></li>
