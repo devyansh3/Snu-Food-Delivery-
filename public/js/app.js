@@ -28194,7 +28194,8 @@ Object(_stripe__WEBPACK_IMPORTED_MODULE_4__["initStripe"])(); // Socket
 var socket = io(); // Join
 
 if (order) {
-  socket.emit('join', "order_".concat(order._id));
+  //for socket.io we will create a provate room for each order_id so that if that order status is updated , only that order is notified rest orders are not disturbed
+  socket.emit('join', "order_".concat(order._id)); //we are joining the admin dashboard and order status page of user 
 }
 
 var adminAreaPath = window.location.pathname;
@@ -28270,7 +28271,7 @@ function _initStripe() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return Object(_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_1__["loadStripe"])('pk_test_51Hf6vbDfWW6uHRy7b6Upoa4bWhGYmk2ElEN4AiFeqozzlccU6OpAoD9d1oIar3qg9i8ASiOs9ly4rFJQOTPM5MMk00GN7COA2N');
+            return Object(_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_1__["loadStripe"])('pk_live_51LDwM5SJTwmBaseI1teIKgvZTWW8Zbz5l6xrUWLITrfRSvPX2VsY1T4iViFP8HeIQB3Rq57mK67vXQROZ2RnJdfr00KLT63HlS');
 
           case 2:
             stripe = _context2.sent;
@@ -28410,8 +28411,8 @@ function _initStripe() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\HP\Downloads\Snu Food App\realtime-pizza-app-node-express-mongo-development\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\HP\Downloads\Snu Food App\realtime-pizza-app-node-express-mongo-development\resources\scss\app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! C:\Users\HP\Desktop\full stack\Snu-Food-Delivery-\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\HP\Desktop\full stack\Snu-Food-Delivery-\resources\scss\app.scss */"./resources/scss/app.scss");
 
 
 /***/ })
